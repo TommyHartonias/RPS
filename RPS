@@ -3,20 +3,17 @@ import random
 user_wins = 0
 computer_wins = 0
 draw = 0
-
 options = ["rock","paper","scissors"]
+random_number = random.randint(0, 2)
+# rock: 0, paper: 1, scissors:2
+computer_pick = options[random_number]
 
 while True:
     user_input = input("Type Rock/Paper/Scissor or q to quit: ").lower()
+    print("Computer picked "+ computer_pick)
     if user_input == "q":
         print("Game Ended! ")
         break
-
-    if user_input in options:
-        random_number = random.randint(0,2)
-        #rock: 0, paper: 1, scissors:2
-        computer_pick = options[random_number]
-        print("Computer Picked", computer_pick + ".")
 
     if user_input == "scissors" and computer_pick == "paper":
         print("You won!")
